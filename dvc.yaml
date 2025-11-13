@@ -15,3 +15,12 @@ stages:
       - data/processed/train.csv
     outs:
       - models/risk_model.pkl
+
+  monitor:
+    cmd: python src/monitor.py
+    deps:
+      - src/monitor.py
+      - models/risk_model.pkl
+      - data/new_data/production_incidents.csv
+    outs:
+      - metrics/monitoring_report.csv

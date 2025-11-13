@@ -15,6 +15,13 @@ with mlflow.start_run():
     mlflow.log_param("n_estimators", 10)
     mlflow.sklearn.log_model(model, "model")
 
-os.makedirs("models", exist_ok=True)
-with open("models/risk_model.pkl", "wb") as f:
+MODEL_DIR = os.path.join(os.getcwd(), "models")
+
+os.makedirs(MODEL_DIR, exist_ok=True)
+ 
+MODEL_PATH = os.path.join(MODEL_DIR, "risk_model.pkl")
+ 
+with open(MODEL_PATH, "wb") as f:
+
     pickle.dump(model, f)
+ 

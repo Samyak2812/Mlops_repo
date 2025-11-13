@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import mlflow, pickle, os
 
+mlflow.set_tracking_uri("file:./mlruns")  # ensures relative local path
 mlflow.set_experiment("GRC_Risk_Model")
 
 train = pd.read_csv("data/processed/train.csv")

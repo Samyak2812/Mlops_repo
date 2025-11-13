@@ -30,7 +30,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install -r requirements.txt
+          pip install numpy pandas scikit-learn mlflow dvc fastapi uvicorn
           pip install dvc[all] mlflow
  
       # Step  - Run the DVC pipeline (train + monitor)
